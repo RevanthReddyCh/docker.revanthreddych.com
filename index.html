@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Installation on Ubuntu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .fontsize {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Docker Installation on Ubuntu</h1>
+    <p>Welcome to the Docker installation guide for Ubuntu.</p>
+    
+    <h2>Step-by-Step Installation Guide</h2>
+    <ul>
+        <li><a href="#docker-ce">Install Docker CE (Community Edition)</a></li>
+        <li><a href="#docker-compose">Install Docker Compose</a></li>
+    </ul>
+    
+    <h2 id="docker-ce">Install Docker CE</h2>
+    <p>Follow these steps to install Docker Community Edition (CE) on Ubuntu:</p>
+    <ol>
+        <li>
+            </p>Update your package index:</p>
+            <code class="fontsize">sudo apt-get update</code>
+            <!-- <button class="copy-button" onclick="copyText('step2')">Copy</button> -->
+            <button style="font-size:24px" sudo apt-get update> <i class="fa fa-copy"></i></button>
+        </li>
+        
+        <li>Install the required packages to allow apt to use a repository over HTTPS:</li>
+        <pre><code>sudo apt-get install apt-transport-https ca-certificates curl software-properties-common</code></pre>
+        
+        <li>Add Docker's official GPG key:</li>
+        <pre><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</code></pre>
+        
+        <li>Add the Docker repository to APT sources:</li>
+        <pre><code>sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"</code></pre>
+        
+        <li>Update the package index again:</li>
+        <pre><code>sudo apt-get update</code></pre>
+
+        <li>Start the Docker service:</li>
+        <pre><code>systemctl start docker</code></pre>
+
+        <li>Verify the Docker service is up and running:</li>
+        <pre><code>systemctl status docker</code></pre>
+        
+        <li>Install Docker CE:</li>
+        <pre><code>sudo apt-get install docker-ce</code></pre>
+        
+        <li>Verify that Docker CE is installed correctly by running the hello-world container:</li>
+        <pre><code>sudo docker run hello-world</code></pre>
+    </ol>
+    
+    <h2 id="docker-compose">Install Docker Compose</h2>
+    <p>To install Docker Compose, follow these steps:</p>
+    <ol>
+        <li>Download the Docker Compose binary into the `/usr/local/bin` directory:</li>
+        <pre><code>sudo curl -L "https://github.com/docker/compose/releases/download/<VERSION>/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</code></pre>
+        
+        <li>Apply executable permissions to the binary:</li>
+        <pre><code>sudo chmod +x /usr/local/bin/docker-compose</code></pre>
+        
+        <li>Verify the installation by checking the version:</li>
+        <pre><code>docker-compose --version</code></pre>
+    </ol>
+    
+    <h2>Additional Resources</h2>
+    <ul>
+        <li><a href="https://docs.docker.com/engine/install/ubuntu/">Official Docker Documentation for Ubuntu</a></li>
+        <li><a href="https://docs.docker.com/compose/install/">Docker Compose Installation Guide</a></li>
+        <li><a href="https://github.com/docker/docker-install">Docker Install Script on GitHub</a></li>
+    </ul>
+</body>
+</html>
