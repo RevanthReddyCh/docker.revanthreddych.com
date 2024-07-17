@@ -38,6 +38,9 @@
         .copy-btn:hover {
             text-decoration: underline;
         }
+        .fontsize {
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -54,49 +57,82 @@
     <p>Follow these steps to install Docker Community Edition (CE) on Ubuntu:</p>
     <ol>
         <li>
-            Update your package index:
+            </p>Update your package index:</p>
             <code class="fontsize">sudo apt-get update</code>
             <button class="copy-btn" onclick="copyToClipboard('sudo apt-get update')"><i class="fa fa-copy"></i></button>
         </li>
         <li>
-            Install the required packages to allow apt to use a repository over HTTPS:
+            </p>Install the required packages to allow apt to use a repository over HTTPS:</p>
             <code class="fontsize">sudo apt-get install apt-transport-https ca-certificates curl software-properties-common</code>
             <button class="copy-btn" onclick="copyToClipboard('sudo apt-get install apt-transport-https ca-certificates curl software-properties-common')"><i class="fa fa-copy"></i></button>
         </li>
 
-        <li>Add Docker's official GPG key:</li>
-        <pre><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</code></pre>
-        
-        <li>Add the Docker repository to APT sources:</li>
-        <pre><code>sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"</code></pre>
-        
-        <li>Update the package index again:</li>
-        <pre><code>sudo apt-get update</code></pre>
+        <li>
+             </p>Add Docker's official GPG key:</p>
+             <code class="fontsize">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</code>
+             <button class="copy-btn" onclick="copyToClipboard('curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -')"><i class="fa fa-copy"></i></button>
+        </li>
 
-        <li>Start the Docker service:</li>
-        <pre><code>systemctl start docker</code></pre>
+        <li>
+            </p>Add the Docker repository to APT sources:</p>
+            <code class="fontsize">sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"</code></pre>
+            <button class="copy-btn" onclick="copyToClipboard('sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"')"><i class="fa fa-copy"></i></button>
+        </li>
 
-        <li>Verify the Docker service is up and running:</li>
-        <pre><code>systemctl status docker</code></pre>
+
+        <li>
+            </p>Update the package index again:</p>
+            <code class="fontsize">sudo apt-get update</code>
+            <button class="copy-btn" onclick="copyToClipboard('sudo apt-get update')"><i class="fa fa-copy"></i></button>
+        </li>
         
-        <li>Install Docker CE:</li>
-        <pre><code>sudo apt-get install docker-ce</code></pre>
+
+        <li>
+            </p>Start the Docker service:</p>
+            <code class="fontsize">systemctl start docker</code>
+            <button class="copy-btn" onclick="copyToClipboard('systemctl start docker')"><i class="fa fa-copy"></i></button>
+        </li>
+
+        <li>
+            </p>Verify the Docker service is up and running:</p>
+            <code class="fontsize">systemctl status docker</code>
+            <button class="copy-btn" onclick="copyToClipboard('systemctl status docker')"><i class="fa fa-copy"></i></button>
+        </li>
+
+        <li>
+            </p>Install Docker CE:</p>
+            <code class="fontsize">sudo apt-get install docker-ce</code>
+            <button class="copy-btn" onclick="copyToClipboard('sudo apt-get install docker-ce')"><i class="fa fa-copy"></i></button>
+        </li>
         
-        <li>Verify that Docker CE is installed correctly by running the hello-world container:</li>
-        <pre><code>sudo docker run hello-world</code></pre>
+        <li>
+            </p>Verify that Docker CE is installed correctly by running the hello-world container:</p>
+            <code class="fontsize">sudo docker run hello-world</code>
+            <button class="copy-btn" onclick="copyToClipboard('sudo docker run hello-world')"><i class="fa fa-copy"></i></button>
+        </li>
     </ol>
     
     <h2 id="docker-compose">Install Docker Compose</h2>
     <p>To install Docker Compose, follow these steps:</p>
     <ol>
-        <li>Download the Docker Compose binary into the `/usr/local/bin` directory:</li>
-        <pre><code>sudo curl -L "https://github.com/docker/compose/releases/download/<VERSION>/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</code></pre>
+        <li>
+            </p>Download the Docker Compose binary into the `/usr/local/bin` directory:</p>
+            <code class="fontsize">sudo curl -L "https://github.com/docker/compose/releases/download/<VERSION>/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</code>
+            <button class="copy-btn" onclick="copyToClipboard('sudo curl -L "https://github.com/docker/compose/releases/download//docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose')"><i class="fa fa-copy"></i></button>
+        </li>
+
+        <li>
+            </p>Apply executable permissions to the binary:</p>
+            <code class="fontsize">sudo chmod +x /usr/local/bin/docker-compose</code>
+            <button class="copy-btn" onclick="copyToClipboard('sudo chmod +x /usr/local/bin/docker-compose')"><i class="fa fa-copy"></i></button>
+
+        </li>
         
-        <li>Apply executable permissions to the binary:</li>
-        <pre><code>sudo chmod +x /usr/local/bin/docker-compose</code></pre>
-        
-        <li>Verify the installation by checking the version:</li>
-        <pre><code>docker-compose --version</code></pre>
+        <li>
+            </p>Verify the installation by checking the version:</p>
+            <code class="fontsize">docker-compose --version</code>
+            <button class="copy-btn" onclick="copyToClipboard('docker-compose --version')"><i class="fa fa-copy"></i></button>
+        </li>
     </ol>
     
     <h2>Additional Resources</h2>
