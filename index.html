@@ -28,8 +28,15 @@
         a:hover {
             text-decoration: underline;
         }
-        .fontsize {
+        .copy-btn {
             font-size: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #007bff;
+        }
+        .copy-btn:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -47,16 +54,14 @@
     <p>Follow these steps to install Docker Community Edition (CE) on Ubuntu:</p>
     <ol>
         <li>
-            </p>Update your package index:</p>
+            Update your package index:
             <code class="fontsize">sudo apt-get update</code>
-            <!-- <button class="copy-button" onclick="copyText('step2')">Copy</button> -->
-            <button style="font-size:24px" sudo apt-get update> <i class="fa fa-copy"></i></button>
+            <button class="copy-btn" onclick="copyToClipboard('sudo apt-get update')"><i class="fa fa-copy"></i></button>
         </li>
-        
         <li>
-            </p>Install the required packages to allow apt to use a repository over HTTPS:</p>
+            Install the required packages to allow apt to use a repository over HTTPS:
             <code class="fontsize">sudo apt-get install apt-transport-https ca-certificates curl software-properties-common</code>
-            <button style="font-size:24px" sudo apt-get install apt-transport-https ca-certificates curl software-properties-common> <i class="fa fa-copy"></i></button>
+            <button class="copy-btn" onclick="copyToClipboard('sudo apt-get install apt-transport-https ca-certificates curl software-properties-common')"><i class="fa fa-copy"></i></button>
         </li>
 
         <li>Add Docker's official GPG key:</li>
@@ -71,7 +76,7 @@
         <li>Start the Docker service:</li>
         <pre><code>systemctl start docker</code></pre>
 
-        <li>Verify the Docker service is up and running: </li>
+        <li>Verify the Docker service is up and running:</li>
         <pre><code>systemctl status docker</code></pre>
         
         <li>Install Docker CE:</li>
@@ -100,5 +105,17 @@
         <li><a href="https://docs.docker.com/compose/install/">Docker Compose Installation Guide</a></li>
         <li><a href="https://github.com/docker/docker-install">Docker Install Script on GitHub</a></li>
     </ul>
+    
+    <script>
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            alert('Command copied to clipboard!');
+        }
+    </script>
 </body>
 </html>
